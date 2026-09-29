@@ -1,0 +1,27 @@
+/* V8: ambient depth for the first-visit cosmic portrait. No expression morphing. */
+body:not(.world-open) .cosmos{background:#0a201e}
+.cosmic-depth{position:absolute;inset:-7%;z-index:-3;overflow:hidden;pointer-events:none;background:#0a201e}
+.cosmic-cloud{position:absolute;inset:0;background:url('assets/miniature-cosmos-v11.png') 54% center/cover no-repeat;opacity:.95;transform:scale(1.15);animation:nebula-drift 20s ease-in-out -7s infinite alternate}
+.cosmic-mist{position:absolute;inset:-10%;background:radial-gradient(ellipse at 75% 32%,#789d7950,transparent 38%),radial-gradient(ellipse at 48% 65%,#ccaf7430,transparent 37%),radial-gradient(ellipse at 18% 24%,#477b7640,transparent 38%);mix-blend-mode:screen;animation:mist-orbit 14s ease-in-out -4s infinite alternate}
+.cosmic-depth:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#081c1b66,transparent 62%),linear-gradient(0deg,#263f34,transparent 30%)}
+body:not(.world-open) .nebula{opacity:.1}
+body:not(.world-open) #portrait-canvas{filter:drop-shadow(0 0 13px #80c8fa26)}
+.world-open .cosmic-depth{opacity:.28}
+@keyframes nebula-drift{from{transform:scale(1.15) translate3d(-4%,-2%,0) rotate(-2deg)}to{transform:scale(1.26) translate3d(4%,2.5%,0) rotate(3deg)}}
+@keyframes mist-orbit{from{transform:translate3d(-6%,3%,0) rotate(-12deg);opacity:.45}to{transform:translate3d(6%,-4%,0) rotate(10deg);opacity:1}}
+html[data-motion='paused'] .cosmic-cloud,html[data-motion='paused'] .cosmic-mist,html[data-cosmos-visible='false'] .cosmic-cloud,html[data-cosmos-visible='false'] .cosmic-mist{animation-play-state:paused}
+@media(max-width:700px){.cosmic-cloud{background-position:64% center;opacity:.94}.cosmic-depth:after{background:linear-gradient(180deg,#081c1b88,transparent 50%,#263f34 100%)}}
+@media(prefers-reduced-motion:reduce){.cosmic-cloud,.cosmic-mist{animation:none!important}}
+/* Explicit Play is a user choice; reduced-motion still starts paused. */
+@media(prefers-reduced-motion:reduce){html[data-motion-opt-in='true'] .cosmic-cloud{animation:nebula-drift 20s ease-in-out -7s infinite alternate!important}html[data-motion-opt-in='true'] .cosmic-mist{animation:mist-orbit 14s ease-in-out -4s infinite alternate!important}html[data-motion='paused'][data-motion-opt-in='true'] .cosmic-cloud,html[data-motion='paused'][data-motion-opt-in='true'] .cosmic-mist,html[data-cosmos-visible='false'][data-motion-opt-in='true'] .cosmic-cloud,html[data-cosmos-visible='false'][data-motion-opt-in='true'] .cosmic-mist{animation-play-state:paused!important}}
+
+/* V10: sculpted deep cosmos, matching the miniature world's sage and cream. */
+.cosmic-cloud{background-position:65% center;background-size:cover}
+.site-header{background:linear-gradient(90deg,#081b1dcc,#122b2877);border-bottom-color:#cbdab51c}
+.cosmos:after{background:linear-gradient(transparent,#263f34)}
+.hero-copy h1 span{background:linear-gradient(90deg,#e7e2be,#b7cda9);background-clip:text}
+.hero-english{color:#c8d0b3}.hero-description{color:#c5d2c5}.hero-credit{color:#c0cfb7}.hero-credit small{color:#9bac97}.hero-cta{border-bottom-color:#c7d2b077}
+.portrait-aura{background:radial-gradient(ellipse,#78966a20,transparent 65%)}
+@keyframes nebula-drift{from{transform:scale(1.025) translate3d(-1.5%,-.8%,0) rotate(-.5deg)}to{transform:scale(1.075) translate3d(1.5%,1%,0) rotate(.6deg)}}
+.cosmic-depth{inset:-3%}.cosmic-cloud{transform:scale(1.025)}
+@media(max-width:700px){.cosmic-cloud{background-position:60% center;background-size:cover}}

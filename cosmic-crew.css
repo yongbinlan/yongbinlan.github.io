@@ -1,0 +1,19 @@
+/* V12: bring the held world into the centre, with breathing room for the crew. */
+@media(min-width:981px){
+ body:not(.world-open) .cosmos{--figure:min(94vh,1120px,70vw);height:max(100vh,calc(190px + var(--figure)*1.46))}
+ body:not(.world-open) .universe-stage{width:78%;right:1%;top:88px}
+ body:not(.world-open) .architect{left:calc(52% - var(--figure)/2)}
+ body:not(.world-open) .planet-stage{left:2%;height:calc(var(--figure)*.88)}
+ body:not(.world-open) .hero-copy{top:215px;width:28%;max-width:360px}
+ body:not(.world-open) .thought-indicator{right:0}
+}
+@media(min-width:701px) and (max-width:980px){body:not(.world-open) .cosmos{--figure:82vw;height:max(1320px,calc(600px + var(--figure)*1.24))}}
+@media(max-width:700px){body:not(.world-open) .cosmos{--figure:96vw;height:max(985px,calc(570px + var(--figure)*1.24));min-height:985px}}
+@media(max-width:370px){body:not(.world-open) .cosmos{height:925px;min-height:925px}}
+.cosmic-crew{position:absolute;inset:0;z-index:7;pointer-events:none;overflow:hidden}
+.cosmic-crew canvas{width:100%;height:100%;display:block}
+.crew-mood{position:absolute;left:0;top:0;white-space:nowrap;font-size:11px;line-height:1.6;color:#f0e8c9;background:#163329d9;border:1px solid #e0ddb340;border-radius:12px;padding:3px 9px;box-shadow:0 4px 16px #0002;pointer-events:none}
+.crew-mood[data-state='sleep']{letter-spacing:.15em;color:#d4dbcd}
+.world-open .cosmic-crew{display:none}
+.skip:not(:focus){clip-path:inset(50%);width:1px;height:1px;overflow:hidden;padding:0}
+@media(max-width:700px){.crew-mood{font-size:9px;padding:2px 6px}}

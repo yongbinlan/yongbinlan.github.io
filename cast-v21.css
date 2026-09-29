@@ -1,0 +1,5 @@
+/* UV-like crop of the preserved whole reference sheet. No regenerated generic icons. */
+.cast-thumb{display:block;flex-shrink:0;width:62px;height:80px;background-image:url('assets/cast-v21/npc-original-atlas.png');background-repeat:no-repeat;background-size:calc(1088 * 62px / 272) calc(1445 * 62px / 272);background-position:calc(var(--cx) * -62px / 272) calc(var(--cy) * -62px / 272)}
+.npc-portrait{display:flex;align-items:center;justify-content:center;background:#eaf0df}
+.npc-portrait .cast-thumb{width:176px;height:calc(var(--ch) * 176px / 272);background-size:calc(1088 * 176px / 272) calc(1445 * 176px / 272);background-position:calc(var(--cx) * -176px / 272) calc(var(--cy) * -176px / 272)}
+@media(max-width:700px){.resident-grid .cast-thumb{width:51px;height:66px;background-size:calc(1088 * 51px / 272) calc(1445 * 51px / 272);background-position:calc(var(--cx) * -51px / 272) calc(var(--cy) * -51px / 272)}.npc-portrait .cast-thumb{width:110px;height:calc(var(--ch) * 110px / 272);background-size:calc(1088 * 110px / 272) calc(1445 * 110px / 272);background-position:calc(var(--cx) * -110px / 272) calc(var(--cy) * -110px / 272)}}
