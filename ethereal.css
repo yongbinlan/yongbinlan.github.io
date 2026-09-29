@@ -1,7 +1,7 @@
 /* V8: ambient depth for the first-visit cosmic portrait. No expression morphing. */
 body:not(.world-open) .cosmos{background:#0a201e}
 .cosmic-depth{position:absolute;inset:-7%;z-index:-3;overflow:hidden;pointer-events:none;background:#0a201e}
-.cosmic-cloud{position:absolute;inset:0;background:url('assets/miniature-cosmos-v11.png') 54% center/cover no-repeat;opacity:.95;transform:scale(1.15);animation:nebula-drift 20s ease-in-out -7s infinite alternate}
+.cosmic-cloud{position:absolute;inset:0;background:url('assets/miniature-cosmos-v11.webp') 54% center/cover no-repeat;opacity:.95;transform:scale(1.15);animation:nebula-drift 20s ease-in-out -7s infinite alternate}
 .cosmic-mist{position:absolute;inset:-10%;background:radial-gradient(ellipse at 75% 32%,#789d7950,transparent 38%),radial-gradient(ellipse at 48% 65%,#ccaf7430,transparent 37%),radial-gradient(ellipse at 18% 24%,#477b7640,transparent 38%);mix-blend-mode:screen;animation:mist-orbit 14s ease-in-out -4s infinite alternate}
 .cosmic-depth:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#081c1b66,transparent 62%),linear-gradient(0deg,#263f34,transparent 30%)}
 body:not(.world-open) .nebula{opacity:.1}

@@ -4,7 +4,7 @@
  if(!host)return;
  const hero=document.querySelector('.cosmos'),fine=matchMedia('(hover: hover) and (pointer: fine)');
  const reaction=document.createElement('div');reaction.className='portrait-reaction';reaction.setAttribute('aria-hidden','true');
- const src='assets/architect-thumbs-up-v48.png';
+ const src='assets/architect-thumbs-up-v48.webp';
  reaction.innerHTML=`<img class="portrait-reaction-body" src="${src}" alt="" draggable="false">`;
  const trigger=document.createElement('button');trigger.type='button';trigger.className='portrait-greeting-trigger';trigger.disabled=true;
  trigger.setAttribute('aria-label','和斌哥打个招呼，查看挑眉点赞');trigger.setAttribute('aria-pressed','false');
@@ -14,7 +14,7 @@
  const masks=document.createElement('canvas');masks.width=masks.height=160;const mc=masks.getContext('2d',{willReadFrequently:true});
  // Union of original and greeting silhouettes keeps the extended hand stable under the pointer.
  async function prepare(){
-  const old=new Image();old.src='assets/architect-open-arms-v34.png';
+  const old=new Image();old.src='assets/architect-open-arms-v34.webp';
   try{await Promise.all([old.decode(),...Array.from(reaction.children,x=>x.decode())]);
    mc.drawImage(old,0,0,160,160);mc.drawImage(reaction.firstElementChild,0,0,160,160);alphas=mc.getImageData(0,0,160,160).data;
    ready=true;host.dataset.greetingReady='true';trigger.disabled=false;

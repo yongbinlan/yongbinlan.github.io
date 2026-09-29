@@ -14,7 +14,7 @@ portrait.onload=()=>{
  document.querySelector('#gaze-state').textContent='自信微笑 · 我的作品世界';
 };
 portrait.onerror=()=>{canvas.dataset.loaded='error';document.querySelector('.architect').classList.add('image-unavailable');document.querySelector('#gaze-state').textContent='人物资源暂不可用';};
-portrait.src='assets/architect-open-arms-v34.png';
+portrait.src='assets/architect-open-arms-v34.webp';
 const names={commerce:'电商内容工厂',delivery:'自动化交付站',studio:'AI 内容演播室',toolbox:'Skill 工具工坊',research:'选品决策实验室'};
 window.setArchitectFocus=id=>{if(names[id])document.querySelector('#gaze-state').textContent='自信微笑 · '+names[id];};
 new IntersectionObserver(e=>{visible=e[0].isIntersecting;document.documentElement.dataset.cosmosVisible=String(visible&&!document.hidden);}).observe(document.querySelector('.cosmos'));document.addEventListener('visibilitychange',()=>{document.documentElement.dataset.cosmosVisible=String(visible&&!document.hidden);});
