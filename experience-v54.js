@@ -1,0 +1,24 @@
+(()=>{'use strict';
+const $=s=>document.querySelector(s),reduce=matchMedia('(prefers-reduced-motion: reduce)'),scene=$('.cosmos');
+const phases=[["采集 · 留下来源", "原片、教学内容与商品资料；保存时间、出处与使用范围。", "已有来源记录", "方法实例来自“大栗呀”的教学内容，保留作品编号 7625945506939134848。", "#factory-methodology .ml-factory-more"], ["分析 · 找到问题", "确认人群、场景、购买任务与内容目标，区分事实与假设。", "已有分析依据", "当前公开实例分析的是“动机反差”的段落职责；不把原视频的商品功效当作新商品的事实。", "#factory-methodology .ml-factory-more"], ["拆解 · 解释机制", "拆出步骤职责、判断条件、证明方式和容易失效的地方。", "已有框架摘录", "动机反差 → 痛点 → 产品解法 → 选择理由。框架编号 FW-MOTIVATION-CONTRAST-001，v1，仍为方法候选。", "#factory-methodology .ml-factory-more"], ["沉淀 · 形成资产", "保留原始证据，整理框架、组件、模板与规则，记录版本。", "已有类目模板", "公开实例包含冰敷眼贴、充电器两个模板。各有来源和适用限制，填入本品事实后才能使用。", "#factory-methodology .ml-factory-more"], ["复用 · 适配任务", "按当前问题检索，复核边界，以本次事实执行并交付。", "已有单次检索记录", "2026-09-29 检索返回了一个框架与两个类目模板。这证明该实例能被调用，不是稳定批产或营销效果验证。", "#factory-methodology .ml-factory-more"], ["反馈 · 修订方法", "绑定采用版本，区分偏好、执行问题与真实效果，再更新。", "已有反馈规则，效果待验证", "采用记录绑定知识版本；偏好、制作问题和市场表现分开记录。这里展示规则，不展示尚未取得的效果。", "#factory-methodology .ml-factory-more"]];
+const root=$('#factory-methodology'),cycle=root?.querySelector('.ml-cycle');
+if(cycle){
+ const guide=document.createElement('div');guide.className='method-guide-v53';guide.innerHTML='<div class="method-tabs-v53" role="tablist" aria-label="内容工厂六个步骤" aria-orientation="vertical"></div><section class="method-panel-v53" role="tabpanel" id="method-panel-v53" tabindex="0"></section>';cycle.after(guide);
+ const tabs=guide.querySelector('.method-tabs-v53'),panel=guide.querySelector('.method-panel-v53');
+ phases.forEach((p,i)=>{const b=document.createElement('button');b.type='button';b.id='method-step-'+i;b.setAttribute('role','tab');b.setAttribute('aria-controls','method-panel-v53');b.innerHTML=`<span>0${i+1}</span><b>${p[0]}</b><i aria-hidden="true">↗</i>`;tabs.append(b);b.addEventListener('click',()=>show(i));b.addEventListener('keydown',e=>{let to=i;if(['ArrowDown','ArrowRight'].includes(e.key))to=(i+1)%6;else if(['ArrowUp','ArrowLeft'].includes(e.key))to=(i+5)%6;else if(e.key==='Home')to=0;else if(e.key==='End')to=5;else return;e.preventDefault();show(to);tabs.children[to].focus();});});
+ function show(i){const p=phases[i];[...tabs.children].forEach((b,n)=>{b.setAttribute('aria-selected',String(n===i));b.tabIndex=n===i?0:-1});panel.setAttribute('aria-labelledby','method-step-'+i);panel.innerHTML=`<small>方法 / 0${i+1}</small><h3>${p[0]}</h3><p>${p[1]}</p><div class="method-evidence-v53"><strong>${p[2]}</strong><p>${p[3]}</p><a href="#factory-methodology" data-method-evidence>展开已有实例与具体规则 ↗</a></div>`;panel.classList.remove('is-changing');if(!reduce.matches&&!window.cosmicMotion?.paused){void panel.offsetWidth;panel.classList.add('is-changing')}panel.dataset.step=String(i)}show(0);
+}
+function reveal(target){let e=target;while(e){if(e.tagName==='DETAILS')e.open=true;e=e.parentElement}}
+function navigate(hash){const target=document.getElementById(decodeURIComponent(hash.slice(1)));if(!target)return;reveal(target);if(hash==='#system-overview')$('#directory-details-v53').open=true;target.scrollIntoView({block:'start',behavior:reduce.matches?'instant':'smooth'});}
+document.addEventListener('click',e=>{
+ const explore=e.target.closest('[data-explore-v53]');if(explore){if(!document.body.classList.contains('world-open'))$('#explore-world').click();return;}
+ const domain=e.target.closest('[data-domain-explore]');if(domain){window.atlasWorld?.enter(domain.dataset.domainExplore);return;}
+ const evidence=e.target.closest('[data-method-evidence]');if(evidence){e.preventDefault();const d=root.querySelector('.ml-factory-more');d.open=true;d.scrollIntoView({block:'start',behavior:reduce.matches?'instant':'smooth'});return;}
+ const a=e.target.closest('a[href^="#"]');if(a&&!a.closest('.cosmos,.site-header')&&a.hash.length>1&&!e.defaultPrevented){const target=document.getElementById(decodeURIComponent(a.hash.slice(1)));if(target){e.preventDefault();history.pushState(null,'',a.hash);navigate(a.hash)}}
+ const toggle=e.target.closest('[data-video-original]');if(toggle){const v=toggle.closest('figure')?.querySelector('video');if(!v)return;const normal=toggle.dataset.mode!=='normal';v.pause();v.src=normal?toggle.dataset.videoOriginal:toggle.dataset.videoQuick;v.muted=!normal;v.load();toggle.dataset.mode=normal?'normal':'quick';toggle.textContent=normal?'切到快速看一遍 · 静音':'切到正常速度 · 原声';v.play().catch(()=>{});}
+});
+window.addEventListener('hashchange',()=>navigate(location.hash));window.addEventListener('popstate',()=>navigate(location.hash));if(location.hash)requestAnimationFrame(()=>navigate(location.hash));
+// Only the actively viewed media should continue playing.
+document.addEventListener('visibilitychange',()=>{if(document.hidden)document.querySelectorAll('video').forEach(v=>v.pause())});
+window.siteExperienceV54={version:54,reveal,navigate};
+})();
