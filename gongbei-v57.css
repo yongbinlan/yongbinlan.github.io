@@ -1,0 +1,22 @@
+/* Scoped to the two implementations of the existing Gongbei case. */
+.gongbei-routes-v57{margin:24px 0 30px;color:#163e38}
+.gongbei-routes-heading>span{font-size:10px;font-weight:700;letter-spacing:.16em;color:#617f72}
+.gongbei-routes-heading h4{font-size:clamp(22px,2.2vw,30px);line-height:1.4;margin:8px 0!important}
+.gongbei-routes-heading>p{line-height:1.8;color:#5b6e60}
+.gongbei-route-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+.gongbei-route{display:flex;flex-direction:column;min-width:0;border:1px solid #cdd8be;border-radius:18px;background:#faf9ee;padding:24px}
+.gongbei-route:nth-child(2){background:#eaf0df}
+.gongbei-route-number{font-size:11px;font-weight:700;letter-spacing:.08em;color:#658068}
+.gongbei-route h5{font-weight:700;font-size:19px;line-height:1.5;margin:12px 0;color:#163e38}
+.gongbei-route p{font-size:14px;line-height:1.85;margin:0 0 12px}
+.gongbei-route ul{font-size:13px;line-height:1.9;padding-left:18px;margin:0 0 16px}
+.gongbei-routes-v57 .gongbei-route li{color:#496356}
+.gongbei-route small{font-size:11px;line-height:1.7;color:#596e60;margin-top:auto;display:block}
+.gongbei-route-link{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:46px;margin-top:15px;padding:10px 14px;background:#17483e;color:#fffdf0!important;border-radius:10px;text-decoration:none!important;font-size:13px;font-weight:600}
+.gongbei-route-link:hover{background:#28634f}
+.gongbei-route-link:focus-visible{outline:3px solid #ad8033;outline-offset:4px}
+.gongbei-route-boundary{font-size:11px!important;line-height:1.8;color:#687762;margin-top:14px}
+.fx-case-notes .gongbei-route-grid{grid-template-columns:1fr}
+.fx-case-notes .gongbei-route{padding:20px}
+.selected-grid-v53 .v53-inline-links{flex-wrap:wrap;row-gap:12px}
+@media(max-width:700px){.gongbei-route-grid{grid-template-columns:1fr}.gongbei-route{padding:20px}.gongbei-routes-heading h4{font-size:24px}.gongbei-route-link{min-height:48px}}
