@@ -1,4 +1,4 @@
-# 兰勇斌 · AI 自动化应用专家
+# 蓝晟硕 · AI 自动化应用专家
 
 [访问个人网站](https://yongbinlan.github.io/)
 

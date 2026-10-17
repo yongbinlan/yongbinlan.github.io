@@ -9,7 +9,7 @@
  const trigger=document.createElement('button');trigger.type='button';trigger.className='portrait-greeting-trigger';trigger.disabled=true;
  trigger.setAttribute('aria-label','和斌哥打个招呼，查看挑眉点赞');trigger.setAttribute('aria-pressed','false');
  const hint=document.createElement('span');hint.className='portrait-greeting-hint';hint.textContent='打个招呼 · 自信点赞';hint.setAttribute('aria-hidden','true');
- host.classList.add('portrait-interactive');host.setAttribute('role','group');host.setAttribute('aria-label','兰勇斌的星尘宇宙化身');base.setAttribute('aria-hidden','true');host.append(reaction,trigger,hint);
+ host.classList.add('portrait-interactive');host.setAttribute('role','group');host.setAttribute('aria-label','蓝晟硕的星尘宇宙化身');base.setAttribute('aria-hidden','true');host.append(reaction,trigger,hint);
  let ready=false,hover=false,pinned=false,focused=false,frame=0,lastEvent=null,alphas=null;
  const masks=document.createElement('canvas');masks.width=masks.height=160;const mc=masks.getContext('2d',{willReadFrequently:true});
  // Union of original and greeting silhouettes keeps the extended hand stable under the pointer.
